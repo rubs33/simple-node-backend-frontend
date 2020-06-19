@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  webapp:
+    image: node:12-alpine
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - 3000:3000
+      - 80:80
+    command: ash -c 'cd /app && npm i && node ./node_modules/nodemon/bin/nodemon.js server.js'
