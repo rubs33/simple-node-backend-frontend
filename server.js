@@ -34,6 +34,7 @@ backendApp.get('/v1/books/:id', (req, res, next) => {
   if (!entity) {
     res.status(404).json({ message: 'book not found' });
     next();
+    return;
   }
 
   res.status(200).json(entity);
@@ -70,6 +71,7 @@ backendApp.delete('/v1/books/:id', (req, res, next) => {
   if (i < 0) {
     res.status(404).json({ message: 'book not found' });
     next();
+    return;
   }
 
   db.splice(i, 1);
