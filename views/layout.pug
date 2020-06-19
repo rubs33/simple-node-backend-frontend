@@ -1,0 +1,50 @@
+- const year = (new Date()).getFullYear();
+- const author = 'Rubens Takiguti Ribeiro';
+doctype html
+|
+|
+html(lang=locale)
+  |
+  |
+  head
+    meta(charset='utf-8')
+    title= title
+    link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk' crossorigin='anonymous')
+    link(rel='icon' href='/favicon.ico' sizes='16x16')
+    link(rel='icon' href='/favicon32.png' sizes='32x32')
+    block links
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  |
+  |
+  body
+    div(class='container')
+      nav(class='navbar navbar-expand-lg navbar-light bg-light')
+        i(class='fas fa-book mr-1')
+        a(class='navbar-brand' href='/')= __('general.title')
+
+    main(role='main' class='flex-shrink-0')
+      div(class='container')
+        header(class='mt-4 mb-4')
+          h1= title
+
+        block content
+
+    div(class='container mt-5')
+      hr
+
+    footer(class='footer mt-auto py-3')
+      div(class='container')
+        span(class='text-muted')
+          span Copyright ©
+          |
+          span(class='year ml-1') #{year}
+          |
+          span(class='ml-3 mr-3') -
+          |
+          span(class='author') #{author}
+
+    script(src='https://code.jquery.com/jquery-3.5.1.min.js' integrity='sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=' crossorigin='anonymous')
+    script(src='https://unpkg.com/@popperjs/core@2')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js' integrity='sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI' crossorigin='anonymous')
+    script(src='https://kit.fontawesome.com/8fe0edbed6.js' crossorigin='anonymous')
+    block scripts

@@ -1,0 +1,43 @@
+{
+	"general": {
+		"back": "Voltar",
+		"close": "Fechar",
+		"data_successfully_saved": "Dados salvos com sucesso.",
+		"failed_save": "Falha ao salvar dados.",
+		"invalid_data": "Dados inválidos.",
+        "next_steps": "Próximos passos",
+        "not_found": "Recurso não encontrado.",
+		"options": "Opções",
+		"title": "Livros"
+	},
+	"pages": {
+		"books": {
+			"create": {
+				"create_another": "Criar outro livro",
+				"details": "Detalhes do livro",
+				"invalid_author": "Autor inválido.",
+				"invalid_name": "Nome inválido.",
+				"save_btn": "Salvar",
+				"title": "Criar novo livro",
+				"view_book": "Ver livro"
+			},
+			"list": {
+				"create_btn": "Criar novo livro",
+				"delete_btn": "Apagar livro",
+                "edit_btn": "Editar livro",
+				"title": "Meus livros",
+                "view_btn": "Ver livro"
+			},
+            "view": {
+                "title": "Ver livro"
+            }
+		}
+	},
+	"entities": {
+		"book": {
+			"id": "ID",
+			"name": "Nome",
+			"author": "Autor"
+		}
+	}
+}

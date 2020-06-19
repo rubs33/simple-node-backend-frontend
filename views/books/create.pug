@@ -1,0 +1,70 @@
+extends ../layout
+
+block content
+  nav(aria-label='breadcrumb')
+    ol(class='breadcrumb')
+      li(class='breadcrumb-item')
+        a(href='/')
+          i(class='fas fa-home mr-1')
+          span= __('general.title')
+      li(class='breadcrumb-item active' aria-current='page')= title
+
+  include ../partials/messages.pug
+
+  case formNewBook.status
+    when 'created'
+      p= __('general.next_steps') + ':'
+      nav
+        ul(class='nav')
+          li(class='nav-item')
+            a(class='nav-link' href=`/books/create`)
+              i(class='fas fa-plus mr-1')
+              span= __('pages.books.create.create_another')
+          li(class='nav-item')
+            a(class='nav-link' href=`/books/view/${formNewBook.createdId}`)
+              i(class='fas fa-eye mr-1')
+              span= __('pages.books.create.view_book')
+          li(class='nav-item')
+            a(class='nav-link' href='/books')
+              i(class='fas fa-arrow-left mr-1')
+              span= __('general.back')
+    default
+      form(action='/books/create' method='post' novalidate)
+        input(type='hidden' name='form' value='form-new-book')
+        fieldset
+          legend= __('pages.books.create.details')
+
+          div(class='form-group')
+            label(for='book-name' class="mr-1")= __('entities.book.name') + ':'
+            input(
+              type='text'
+              class=['form-control', formNewBook.fields.name.status ? `is-${formNewBook.fields.name.status}` : '']
+              placeholder=__('entities.book.name')
+              id='book-name'
+              name='name'
+              value=formNewBook.fields.name.value
+            )
+            if formNewBook.fields.name.error
+              div(class='invalid-feedback')= formNewBook.fields.name.error
+
+          div(class='form-group')
+            label(for='book-author' class='mr-1')= __('entities.book.author') + ':'
+            input(
+              type='text'
+              class=['form-control', formNewBook.fields.author.status ? `is-${formNewBook.fields.author.status}` : '']
+              placeholder=__('entities.book.author')
+              id='book-author'
+              name='author'
+              value=formNewBook.fields.author.value
+            )
+            if formNewBook.fields.author.error
+              div(class='invalid-feedback')= formNewBook.fields.author.error
+
+        div(class='form-group')
+          button(class='btn btn-large btn-primary mr-3' type='submit')
+            i(class='fas fa-save mr-1')
+            span= __('pages.books.create.save_btn')
+
+          a(class='btn btn-light' role='button' href='/books')
+            i(class='fas fa-arrow-left mr-1')
+            span= __('general.back')

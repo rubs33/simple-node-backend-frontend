@@ -1,0 +1,43 @@
+{
+	"general": {
+		"back": "Back",
+		"close": "Close",
+		"data_successfully_saved": "Data was successfully saved.",
+		"failed_save": "Failed to save data.",
+		"invalid_data": "Invalid data.",
+        "next_steps": "Next steps",
+        "not_found": "Resource not found.",
+		"options": "Options",
+		"title": "Books"
+	},
+	"pages": {
+		"books": {
+			"create": {
+				"create_another": "Create another",
+				"details": "Details of the book",
+				"invalid_author": "Invalid author.",
+				"invalid_name": "Invalid name.",
+				"save_btn": "Save",
+				"title": "Create new book",
+				"view_book": "View book"
+			},
+			"list": {
+				"create_btn": "Create book",
+				"delete_btn": "Remove book",
+				"edit_btn": "Edit book",
+				"title": "My books",
+				"view_btn": "View book"
+			},
+            "view": {
+                "title": "View book"
+            }
+		}
+	},
+	"entities": {
+		"book": {
+			"id": "ID",
+			"name": "Name",
+			"author": "Author"
+		}
+	}
+}

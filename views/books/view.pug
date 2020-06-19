@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+  nav(aria-label='breadcrumb')
+    ol(class='breadcrumb')
+      li(class='breadcrumb-item')
+        a(href='/')
+          i(class='fas fa-home mr-1')
+          span= __('general.title')
+      li(class='breadcrumb-item active' aria-current='page')= title
+
+  include ../partials/messages.pug
+
+  if book
+    div(class='card')
+      div(class='card-body')
+        dl(class='mb-0')
+          dt= __('entities.book.id')
+          dd= book.id
+          dt= __('entities.book.name')
+          dd= book.name
+          dt= __('entities.book.author')
+          dd= book.author

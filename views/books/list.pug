@@ -1,0 +1,33 @@
+extends ../layout
+
+block content
+  nav(aria-label='breadcrumb')
+    ol(class='breadcrumb')
+      li(class='breadcrumb-item active' aria-current='page')
+        span
+          i(class='fas fa-home mr-1')
+          span= __('general.title')
+
+  table(class='table table-bordered table-striped table-hover')
+    thead
+      tr
+        th= __('entities.book.name')
+        th= __('entities.book.author')
+        th= __('general.options')
+    tbody
+      each book in books
+        tr
+          td
+            a(href=`/books/view/${book.id}`) #{book.name}
+          td #{book.author}
+          td
+            div(class='btn-group' role='group' aria-label=__('general.options'))
+              a(class='btn btn-light btn-sm' href=`/books/view/${book.id}` title=__('pages.books.list.view_btn'))
+                i(class='fas fa-eye')
+              a(class='btn btn-danger btn-sm' href=`/books/delete/${book.id}` title=__('pages.books.list.delete_btn'))
+                i(class='fas fa-trash')
+
+  div(class='form-actions')
+    a(class='btn btn-large btn-primary' href='/books/create')
+      i(class='fas fa-plus mr-1')
+      span= __('pages.books.list.create_btn')
